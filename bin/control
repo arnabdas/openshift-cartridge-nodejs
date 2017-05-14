@@ -30,8 +30,10 @@ function build() {
     mv -f ${OPENSHIFT_DATA_DIR}node_modules ./
     rm -rf ${OPENSHIFT_DATA_DIR}node_modules
   fi
-  npm prune --production
-  npm i --production
+  #npm prune --production
+  npm install -g gulp
+  npm install
+  gulp
   cd ${INIT_DIR}
   client_result 'Node.js modules installed.'
 }
